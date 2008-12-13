@@ -2,22 +2,22 @@
 Contributors: Abanova Olga
 Donate link: http://www.getincss.ru/
 Tags: seo, target visitors, search engines, google, yandex, msn, yahoo
-Requires at least: 2.0.2
-Tested up to: 2.6
-Stable tag: 1.1
+Requires at least: 2.3.2
+Tested up to: 2.7
+Stable tag: 1.1.1
 
 Plugin shows a special message for users coming from search engines like Google, Yandex, MSN, Yahoo, etc.
 
 == Description ==
 
-Plugin display a special message(s) to your blog's visitors coming from search engines (Google, Yandex, MSN, Yahoo, Mail.ru, Altavista, Liveinternet, Rambler).
+Plugin shows a special message(s) to your blog's visitors, who coming from search engines (Google, Yandex, MSN, Yahoo, Mail.ru, Altavista, Liveinternet, Rambler).
 It's really important to attract visitors attention. You can add any message to display it, for example "Like this article? Follow my blog! (rss link here)". So, you visitors will be more interested to follow your blog updates and you will see how your rss counter growing up.
 
 
 == Installation ==
 
-1. Upload folder `wp-target-visitors` to `/wp-content/plugins/` directory
-2. Activate the plugin `Target Visitors` through the 'Plugins' menu in WordPress
+1. Upload folder `wp-target-visitors` to `/wp-content/plugins/` directory.
+2. Activate the plugin `Target Visitors`.
 3. Open Plugin options.  
 4. "Message" area is message that will be display to your target visitors. Here you can use tags:
 
@@ -29,7 +29,7 @@ It's really important to attract visitors attention. You can add any message to 
 
 5. Check if the css file in `/wp-content/plugins/wp-target-visitors/` directory writable. If yes, change styles as you need for display message.
 6. Tick the checkbox if you want to set up `wp_target_visitors` funcion automaticaly to your single.php page.
-7. If you want to show message on another pages like search.php, archives.php, place 
+7. If you want to show message on another pages (like search.php, archives.php) place this code 
    `lt;? if(function_exists("wp_target_visitors")) wp_target_visitors(); ?>` 
    in your templates.
 
