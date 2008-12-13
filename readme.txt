@@ -30,7 +30,7 @@ It's really important to attract visitors attention. You can add any message to 
 5. Check if the css file in `/wp-content/plugins/wp-target-visitors/` directory writable. If yes, change styles as you need for display message.
 6. Tick the checkbox if you want to set up `wp_target_visitors` funcion automaticaly to your single.php page.
 7. If you want to show message on another pages like search.php, archives.php, place 
-   `<? if(function_exists('wp_target_visitors')) wp_target_visitors(); ?>` 
+   `lt;? if(function_exists('wp_target_visitors')) wp_target_visitors(); ?>` 
    in your templates.
 
 == Frequently Asked Questions ==
