@@ -11,8 +11,23 @@ Plugin shows a special message for users coming from search engines like Google,
 == Description ==
 
 Plugin shows a special message(s) to your blog's visitors, who coming from search engines (Google, Yandex, MSN, Yahoo, Mail.ru, Altavista, Liveinternet, Rambler).
-It's really important to attract visitors attention. You can add any message to display it, for example "Like this article? Follow my blog! (rss link here)". So, you visitors will be more interested to follow your blog updates and you will see how your rss counter growing up.
 
+It's really important to attract visitors attention. You can add any message to display it, for example:
+
+"Like this article? Follow my blog! (rss link here)". 
+
+So, you visitors will be more interested to follow your blog updates and you will see how your rss counter growing up.
+
+**For Russian users:**
+
+Плагин показывает специальное сообщение (которые вы введете) для пользователей пришедших с поисковых систем Google, Yandex, Mail, Yahoo, Liveinternet, Rambler, Altavista, Msn. Найденные слова подствечиваются (см. скриншоты)
+
+[Скачать русскую версию][]
+
+[Домашняя страница плагина][]
+
+[Скачать русскую версию]:http://downloads.wordpress.org/plugin/target-visitors.1.1.1_ru.zip
+[Домашняя страница плагина]:http://www.getincss.ru/2008/07/13/wp-target-visitors/
 
 == Installation ==
 
