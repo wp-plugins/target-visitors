@@ -3,7 +3,7 @@ Plugin Name: Target Visitors
 Plugin URI: http://www.getincss.ru/2008/07/13/wp-target-visitors/
 Description: Показывает ваше специальное сообщение для пользователей пришедших с поисковых систем Google, Yandex, Mail, Yahoo, Liveinternet, Rambler, Altavista, Msn.
 Author: Abanova Olga
-Version: 1.0.3
+Version: 1.1.1
 Author URI: http://www.getincss.ru
 */
 
