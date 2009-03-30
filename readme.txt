@@ -31,7 +31,7 @@ So, you visitors will be more interested to follow your blog updates and you wil
 
 == Installation ==
 
-1. Upload folder `wp-target-visitors` to `/wp-content/plugins/` directory.
+1. Upload folder `target-visitors` to `/wp-content/plugins/` directory.
 2. Activate the plugin `Target Visitors`.
 3. Open Plugin options.  
 4. "Message" area is message that will be display to your target visitors. Here you can use tags:
@@ -42,7 +42,7 @@ So, you visitors will be more interested to follow your blog updates and you wil
 
     **[RSS_URL]** - you RSS url 
 
-5. Check if the css file in `/wp-content/plugins/wp-target-visitors/` directory writable. If yes, change styles as you need for display message.
+5. Check if the css file in `/wp-content/plugins/target-visitors/` directory writable. If yes, change styles as you need for display message.
 6. Tick the checkbox if you want to set up `wp_target_visitors` funcion automaticaly to your single.php page.
 7. If you want to show message on another pages (like search.php, archives.php) place this code: `<? if(function_exists('wp_target_visitors')) wp_target_visitors(); ?>` in your templates.
 

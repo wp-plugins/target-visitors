@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /*
 Plugin Name: Target Visitors
 Plugin URI: http://www.getincss.ru/wp-target-visitors_EN/
@@ -11,7 +11,7 @@ Author URI: http://www.getincss.ru
 include_once ('functions.php');
 // Adding stylesheet in head
 function target_visitors_head() {
-  echo "<link rel=\"stylesheet\" href=\"".get_option('siteurl')."/wp-content/plugins/wp-target-visitors/target-visitors.css\" type=\"text/css\" media=\"screen\" />\n";
+  echo "<link rel=\"stylesheet\" href=\"".get_option('siteurl')."/wp-content/plugins/target-visitors/target-visitors.css\" type=\"text/css\" media=\"screen\" />\n";
 }
 
 function autosetfunc($content) {
@@ -57,7 +57,7 @@ function target_visitors_options_page() {
 			}
 			
 			if (empty($_POST['css_code'])){
-				$filename = $_SERVER['DOCUMENT_ROOT']."/wp-content/plugins/wp-target-visitors/target-visitors.css";
+				$filename = $_SERVER['DOCUMENT_ROOT']."/wp-content/plugins/target-visitors/target-visitors.css";
 				  if (is_writable($filename)) {
 						$css_open_file = fopen($filename, "w");					
 						if (fwrite($css_open_file, $css_code) === FALSE) {
@@ -80,7 +80,7 @@ function target_visitors_options_page() {
 			update_option('text_code', $text_code);
 			$msg_status = "Text saved. ";
 			$css_code = stripcslashes($_POST['css_code']);
-			$filename = $_SERVER['DOCUMENT_ROOT']."/wp-content/plugins/wp-target-visitors/target-visitors.css";
+			$filename = $_SERVER['DOCUMENT_ROOT']."/wp-content/plugins/target-visitors/target-visitors.css";
 			  if (is_writable($filename)) {
 					$css_open_file = fopen($filename, "w");					
 					if (fwrite($css_open_file, $css_code) === FALSE) {
@@ -110,7 +110,7 @@ function target_visitors_options_page() {
 		$text_code = get_option('text_code');
 		$text_code= stripcslashes($text_code);	
 		$autoset=get_option('autoset');
-		$filename = $_SERVER['DOCUMENT_ROOT']."/wp-content/plugins/wp-target-visitors/target-visitors.css";
+		$filename = $_SERVER['DOCUMENT_ROOT']."/wp-content/plugins/target-visitors/target-visitors.css";
 		  if (is_readable($filename)) {
 				$css_open_file = fopen($filename, "r");
 				$css_code = fread($css_open_file, filesize($filename));					
