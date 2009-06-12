@@ -26,7 +26,7 @@ So, you visitors will be more interested to follow your blog updates and you wil
 
 [Домашняя страница плагина][]
 
-[Скачать русскую версию]:http://downloads.wordpress.org/plugin/target-visitors.1.1.1_ru.zip
+[Скачать русскую версию]:http://downloads.wordpress.org/plugin/target-visitors.1.2_ru.zip
 [Домашняя страница плагина]:http://www.getincss.ru/2008/07/13/wp-target-visitors/
 
 == Installation ==
