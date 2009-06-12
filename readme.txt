@@ -4,7 +4,7 @@ Donate link: http://www.getincss.ru/
 Tags: seo, target visitors, search engines, google, yandex, msn, yahoo
 Requires at least: 2.3.2
 Tested up to: 2.7
-Stable tag: 1.1.1
+Stable tag: 1.2
 
 Plugin shows a special message for users coming from search engines like Google, Yandex, MSN, Yahoo, etc.
 
