@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 /*
 Plugin Name: Target Visitors
 Plugin URI: http://www.getincss.ru/wp-target-visitors_EN/
@@ -389,18 +389,6 @@ function wp_target_visitors () {
 	$wp_target_code = wp_target_visitors_auto ();
 	echo $wp_target_code;
 }
-  
-function hilite_head() {
-	echo "
-<style type='text/css'>
-.hightlite {
-	color: #fff;
-	background-color: #f93;
-}
-</style>
-";
-}   
-
     
 add_action('admin_menu', 'target_visitors_add_pages');
 add_action('init', 'target_visitors_set');
