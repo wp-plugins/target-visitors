@@ -84,7 +84,7 @@ msgstr "CSS код (CSS файл в рабочей папке плагина д�
 
 #: wp-target-visitors.php:147
 msgid "Autoset plugin's display message function on single.php page"
-msgstr "втоматически подключить функцию на страницу single.php"
+msgstr "Автоматически подключить функцию на страницу single.php"
 
 #: wp-target-visitors.php:149
 msgid "Save code &raquo;"
