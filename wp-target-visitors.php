@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 /*
 Plugin Name: Target Visitors
 Plugin URI: http://www.getincss.ru/2008/07/13/wp-target-visitors/
