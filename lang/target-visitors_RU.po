@@ -1,0 +1,92 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Target Visitors 1.2.2\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/tag/target-visitors\n"
+"POT-Creation-Date: 2009-06-21 13:47+0000\n"
+"PO-Revision-Date: \n"
+"Last-Translator: Olga <webmaster@getincss.ru>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Russian\n"
+"X-Poedit-Country: RUSSIAN FEDERATION\n"
+"X-Poedit-SourceCharset: utf-8\n"
+
+#: wp-target-visitors.php:40
+msgid "You were come by request"
+msgstr "Вы зашли на эту страницу по запросу "
+
+#: wp-target-visitors.php:40
+msgid "Find interesting information? You can easy follow my blog through"
+msgstr "Нашли полезную информацию? Следить за новыми записями в блоге вам поможет подписка на "
+
+#: wp-target-visitors.php:57
+msgid "Target Visitors options"
+msgstr "Настройки Target Visitors"
+
+#: wp-target-visitors.php:67
+msgid "HTML code removed"
+msgstr "HTML код удален."
+
+#: wp-target-visitors.php:75
+#: wp-target-visitors.php:98
+msgid "Error writing css file."
+msgstr "Ошибка записи CSS файла."
+
+#: wp-target-visitors.php:80
+msgid "CSS code removed"
+msgstr "CSS код удален."
+
+#: wp-target-visitors.php:82
+msgid "CSS file is not allowed for writing"
+msgstr "CSS файл не доступен для записи."
+
+#: wp-target-visitors.php:102
+msgid "CSS code saved"
+msgstr "CSS код сохранен."
+
+#: wp-target-visitors.php:104
+msgid "CSS file is not allowed for writing."
+msgstr "CSS файл не доступен для записи."
+
+#: wp-target-visitors.php:110
+msgid "Plugin will autoset to single.php"
+msgstr "Плагин будет автоматически подключен на страницу single.php"
+
+#: wp-target-visitors.php:113
+msgid "Plugin will not autoset to single.php"
+msgstr "Плагин не будет автоматически подключен на страницу single.php"
+
+#: wp-target-visitors.php:130
+msgid "Css file is not readable."
+msgstr "CSS файл не доступен для чтения."
+
+#: wp-target-visitors.php:138
+msgid "Support"
+msgstr "Обратная связь"
+
+#: wp-target-visitors.php:139
+msgid "If you have any ideas or questions about this plugin, write a comment at plugin homepage <a href=\"http://www.getincss.ru/wp-target-visitors_en/\">Target Visitors</a>.<br /><br />You can also e-mail me: webmaster(dog)getincss.ru<br /><br /><b>Do you like this plugin?</b><br />I'll glad for your donations. Webmoney:<br />Z102896061935<br />R144897054561"
+msgstr "Если у вас появились вопросы или идеи по использованию плагина, оставляйте ваши комментарии на домашней странице <a href=\"http://www.getincss.ru/2008/07/13/wp-target-visitors/\">Target Visitors</a>.<br /><br />Вы также можете написать на мой электронный адрес webmaster(dog)getincss.ru<br /><br /><b>Понравился плагин?</b><br />Вы можете поддержать дальнейшую работу над ним. Webmoney:<br />Z102896061935<br />R144897054561"
+
+#: wp-target-visitors.php:142
+msgid "Plugin \"Target Visitors\" allow to show special message for visitors coming from search engines: Google, Yandex, Mail, Yahoo, Liveinternet, Rambler, Altavista, Msn. You can use this tags in text:<br /><br><b>[PERMALINK]</b> - current page's URL<br><br><b style=\"color:red\">[SE_REQUEST]</b> - search engine request that user coming by<br><br><b>[RSS_URL]</b> - URL for your RSS<br><br>After saving data you can to put this code:<br><b><code>&lt;? if(function_exists(\"wp_target_visitors\")) wp_target_visitors(); ?&gt;</code></b><br> on pages: search.php, archive.php, etc, where you want to show a message for target visitors."
+msgstr "Плагин \"Target Visitors\" позволяет вывести специальное сообщение для пользователей пришедших с поисковых систем Google, Yandex, Mail, Yahoo, Liveinternet, Rambler, Altavista, Msn. В тексте вы можете использовать следующие сокращения:<br />            <br><b>[PERMALINK]</b> - URL текущей статьи, страницы, на которую зашел пользователь<br><br>            <b style=\"color:red\">[SE_REQUEST]</b> - тот самый поисковый запрос, по которому пришел пользователь<br><br>            <b>[RSS_URL]</b> - адрес вашей RSS ленты<br><br>            После сохранения данных, разместите следующий код:<br><b><code>&lt;? if(function_exists(\"wp_target_visitors\")) wp_target_visitors(); ?&gt;</code></b><br> на станицах single.php, search.php, archive.php и других, где вы хотите показывать целевым посетителям свое сообщение."
+
+#: wp-target-visitors.php:145
+msgid "Your Message"
+msgstr "Текст сообщения"
+
+#: wp-target-visitors.php:146
+msgid "CSS code (CSS file in <b>target-visitors</b> directory  must be writable)"
+msgstr "CSS код (CSS файл в рабочей папке плагина должен быть доступен для записи)"
+
+#: wp-target-visitors.php:147
+msgid "Autoset plugin's display message function on single.php page"
+msgstr "втоматически подключить функцию на страницу single.php"
+
+#: wp-target-visitors.php:149
+msgid "Save code &raquo;"
+msgstr "Сохранить код &raquo;"
+
