@@ -4,9 +4,9 @@ Donate link: http://www.getincss.ru/
 Tags: seo, target visitors, search engines, google, yandex, msn, yahoo
 Requires at least: 2.3.2
 Tested up to: 2.8
-Version: 1.2.2
+Version: 1.2.3
 Last Updated: 2009-06-21
-Stable tag: 1.2.2
+Stable tag: 1.2.3
 
 Plugin shows a special message for users coming from search engines like Google, Yandex, MSN, Yahoo, etc.
 
@@ -24,11 +24,8 @@ So, you visitors will be more interested to follow your blog updates and you wil
 
 Плагин показывает специальное сообщение (которые вы введете) для пользователей пришедших с поисковых систем Google, Yandex, Mail, Yahoo, Liveinternet, Rambler, Altavista, Msn. Найденные слова подствечиваются (см. скриншоты)
 
-[Скачать русскую версию][]
-
 [Домашняя страница плагина][]
 
-[Скачать русскую версию]:http://downloads.wordpress.org/plugin/target-visitors.1.2.2_ru.zip
 [Домашняя страница плагина]:http://www.getincss.ru/2008/07/13/wp-target-visitors/
 
 == Installation ==
@@ -66,7 +63,7 @@ So, you visitors will be more interested to follow your blog updates and you wil
 
 == Changelog ==
 
-= 1.2.2_ru =
+= 1.2.3 =
 * Fixed russian lang.
 
 = 1.2.1 =
