@@ -1,14 +1,13 @@
-<?php
+﻿<?php
 /*
 Plugin Name: Target Visitors
-Plugin URI: http://www.getincss.ru/wp-target-visitors_EN/
-Description: Plugin shows a special message for visitors coming from search engines: Google, Yandex, Mail, Yahoo, Liveinternet, Rambler, Altavista, Msn.
+Plugin URI: http://www.getincss.ru/2008/07/13/wp-target-visitors/
+Description: Показывает ваше специальное сообщение для пользователей пришедших с поисковых систем Google, Yandex, Mail, Yahoo, Liveinternet, Rambler, Altavista, Msn.
 Author: Abanova Olga
-Version: 1.1.1
+Version: 1.2.2_ru
 Author URI: http://www.getincss.ru
 */
-
-include_once ('functions.php');
+include_once 'functions.php';
 
 if ( ! defined( 'WP_CONTENT_URL' ) )
       define( 'WP_CONTENT_URL', get_option( 'siteurl' ) . '/wp-content' );
@@ -33,11 +32,10 @@ function autosetfunc($content) {
 	return $content;
 }
 
-
 //init on activate plugin
 if (!function_exists('target_visitors_set')) {
     function target_visitors_set() {
-        $text_code = "<div class=\"se_request\">You were come by request: <a href=\"[PERMALINK]\"><b>[SE_REQUEST]</b></a>.<br />Find interesting information? You can easy follow my blog through <a href=\"[RSS_URL]\"><b>RSS</b></a>.</div>";
+        $text_code = "<div class=\"se_request\">Вы зашли на эту страницу по запросу: <a href=\"[PERMALINK]\"><b>[SE_REQUEST]</b></a>.<br />Нашли полезную информацию? Следить за новыми статьями вам поможет подписка на <a href=\"[RSS_URL]\"><b>RSS</b></a>.</div>";
 		$autoset = '0';
 		if(@$_POST['target_visitors_update']):
 				update_option("text_code", $_POST['text_code']);
@@ -54,7 +52,7 @@ if (!function_exists('target_visitors_set')) {
 
 //adding options in admin menu
 function target_visitors_add_pages() {
-   add_options_page('Target Visitors options', 'Target Visitors', 8, __FILE__, 'target_visitors_options_page');
+   add_options_page('Настройки Target Visitors', 'Target Visitors', 8, __FILE__, 'target_visitors_options_page');
 }
 
 //plugin options
@@ -64,22 +62,22 @@ function target_visitors_options_page() {
 			if (empty($_POST['text_code'])) {
 				  $text_code = "";
 				  update_option('text_code', $text_code);
-				  $msg_status = "HTML code removed";
-			}
-			
+				  $msg_status = "HTML код удален";
+			}			
+	
 			if (empty($_POST['css_code'])){
 				$filename = WP_PLUGIN_DIR."/target-visitors/target-visitors.css";
 				  if (is_writable($filename)) {
 						$css_open_file = fopen($filename, "w");					
 						if (fwrite($css_open_file, $css_code) === FALSE) {
-							$msg_status = "Error writing css file.";
+							$msg_status = "Ошибка записи в файл CSS";
 							exit;
 						}					
 						fclose($css_open_file);						
 						//remove_action('wp_head','target_visitors_head');
-			      		$msg_status.="CSS code removed";
+			      		$msg_status.="CSS код удален";
 				   } else {
-					   $msg_status = "CSS file is not allowed for writing";
+					   $msg_status = "CSS файл недоступен для записи";
 					   exit;
 				   }			      
 			?>
@@ -89,45 +87,48 @@ function target_visitors_options_page() {
 		} else {	
 			$text_code = stripcslashes($_POST['text_code']);
 			update_option('text_code', $text_code);
-			$msg_status = "Text saved. ";
+			$msg_status = "Текст сохранен. ";
 			$css_code = stripcslashes($_POST['css_code']);
 			$filename = WP_PLUGIN_DIR."/target-visitors/target-visitors.css";
 			  if (is_writable($filename)) {
 					$css_open_file = fopen($filename, "w");					
 					if (fwrite($css_open_file, $css_code) === FALSE) {
-						$msg_status.="Error writing css file.";
+						$msg_status.="Ошибка записи CSS файла.";
 						exit;
 					}					
 					fclose($css_open_file);						
-					$msg_status.="CSS code saved";
+					$msg_status.="CSS код сохранен.";
 			   } else {
-			   $msg_status.="CSS file is not allowed for writing.";
+			   $msg_status.="CSS файл недоступен для записи. ";
 			   }			 
 		} 
 		
 		if ($_POST['autoset']) {
 		  update_option('autoset', $_POST['autoset']);
-		  $msg_status.="Plugin will autoset to single.php";
+		  $msg_status.="Автоматическое подключение функции включено";
 		  add_filter('the_content', 'autosetfunc');
 		} else {
-			$msg_status.="Plugin will not autoset to single.php";
+			$msg_status.="Автоматическое подключение функции отключено";
 		}
 		
-		?><div id="message" class="updated fade"><p><?=$msg_status?></p></div><?
+		?>
+
+        <div id="message" class="updated fade"><p><?=$msg_status?></p></div>
+		<?
 	}
 	
 	else {
 		// Fetch code from options
 		$text_code = get_option('text_code');
 		$text_code= stripcslashes($text_code);	
-		$autoset=get_option('autoset');
+		$autoset = get_option('autoset');
 		$filename = WP_PLUGIN_DIR."/target-visitors/target-visitors.css";
 		  if (is_readable($filename)) {
 				$css_open_file = fopen($filename, "r");
 				$css_code = fread($css_open_file, filesize($filename));					
 				fclose($css_open_file);						
 		   } else {
-		   $msg_status.="Css file is not readable.";
+		   $msg_status.="CSS файл недоступен для записи.";
 		   ?><div id="message" class="updated fade"><p><?=$msg_status?></p></div> <?
 		   }		
 	} 
@@ -135,27 +136,28 @@ function target_visitors_options_page() {
 <div class="wrap">
      <h2>Target visitors</h2>
 	  <div style="float:right; width:250px; border:solid 1px #ccc; padding:10px;">
-        <h3 style="font-size:16px; background:#eee">Support</h3>
-        <p>If you have any ideas or questions about this plugin, write a comment at plugin homepage <a href="http://www.getincss.ru/wp-target-visitors_en/">Target Visitors</a>.<br /><br />You can also e-mail me: webmaster(dog)getincss.ru<br /><br /><b>Do you like this plugin?</b><br />I'll glad for your donations. Webmoney:<br />Z102896061935<br />R144897054561</p>
+        <h3 style="font-size:16px; background:#eee">Саппорт</h3>
+        <p>Если у вас появились вопросы или идеи по использованию плагина, оставляйте ваши комментарии на домашней странице <a href="http://www.getincss.ru/2008/07/13/wp-target-visitors/">Target Visitors</a>.<br /><br />Вы также можете написать на мой электронный адрес webmaster(dog)getincss.ru<br /><br /><b>Понравился плагин?</b><br />Вы можете поддержать дальнейшую работу над ним. Webmoney:<br />Z102896061935<br />R144897054561</p>
         </div>
         <div style="margin-right:300px;">
-            <p>Plugin "Target Visitors" allow to show special message for visitors coming from search engines: Google, Yandex, Mail, Yahoo, Liveinternet, Rambler, Altavista, Msn. You can use this tags in text:<br />
-            <br><b>[PERMALINK]</b> - current page's URL<br><br>
-            <b style="color:red">[SE_REQUEST]</b> - search engine request that user coming by<br><br>
-            <b>[RSS_URL]</b> - URL for your RSS<br><br>
-            After saving data you can to put this code:<br><b><code>&lt;? if(function_exists("wp_target_visitors")) wp_target_visitors(); ?&gt;</code></b><br> on pages: search.php, archive.php, etc, where you want to show a message for target visitors.
+            <p>Плагин "Target Visitors" позволяет вывести специальное сообщение для пользователей пришедших с поисковых систем Google, Yandex, Mail, Yahoo, Liveinternet, Rambler, Altavista, Msn. В тексте вы можете использовать следующие сокращения:<br />
+            <br><b>[PERMALINK]</b> - URL текущей статьи, страницы, на которую зашел пользователь<br><br>
+            <b style="color:red">[SE_REQUEST]</b> - тот самый поисковый запрос, по которому пришел пользователь<br><br>
+            <b>[RSS_URL]</b> - адрес вашей RSS ленты<br><br>
+            После сохранения данных, разместите следующий код:<br><b><code>&lt;? if(function_exists("wp_target_visitors")) wp_target_visitors(); ?&gt;</code></b><br> на станицах single.php, search.php, archive.php и других, где вы хотите показывать целевым посетителям свое сообщение.
             </p>                                
             <form name="form_target_visitors" method="post" action="<?=$_SERVER['REQUEST_URI']?>">
-                    <p>Your Message:<br /><textarea name="text_code" id="text_code" cols="40" rows="10" style="width: 80%; font-size: 14px;" class="code"><?=stripslashes($text_code);?></textarea></p>
-                    <p>CSS code (CSS file in <b>target-visitors</b> directory  must be writable):<br /><textarea name="css_code" id="css_code" cols="40" rows="10" style="width: 80%; font-size: 14px;" class="code"><?=stripslashes($css_code);?></textarea></p>
-                    <p><input type="checkbox" name="autoset" value="1" <? if (get_option('autoset')=="1") echo "checked";?> /> Autoset plugin's display message function on single.php page</p>
+                    <p>Ваш текст:<br /><textarea name="text_code" id="text_code" cols="40" rows="10" style="width: 80%; font-size: 14px;" class="code"><?=stripslashes($text_code);?></textarea></p>
+                    <p>CSS код (CSS файл в рабочей папке плагина должен быть доступен для записи):<br /><textarea name="css_code" id="css_code" cols="40" rows="10" style="width: 80%; font-size: 14px;" class="code"><?=stripslashes($css_code);?></textarea></p>
+                    <p><input type="checkbox" name="autoset" value="1" <? if (get_option('autoset')=="1") echo "checked";?> /> Автоматически подключить функцию на страницу single.php</p>
             <p class="submit">
-                <input type="submit" name="target_visitors_update" value="Save code &raquo;" />
+                <input type="submit" name="target_visitors_update" value="Сохранить код &raquo;" />
             </p>			
      </div>
 </div>
 <?    
 }
+
 
 
 function get_search_query_terms() {
@@ -170,7 +172,7 @@ function get_search_query_terms() {
 		if (strstr($se,"+")) $se = str_replace("+"," ",$se);
 		$query_array = explode(" ", $se);
 	else:
-		$se=getenv("HTTP_REFERER");
+		$se=getenv("HTTP_REFERER");		
 		$se_array = array("?q="=>"3","&q="=>"3","text="=>"5","words="=>"6","ask="=>"4","&p="=>"3","?p="=>"3");	
 		foreach ($se_array as $se_item=>$se_item_num):
 			if(strstr($se,$se_item)):
@@ -187,8 +189,8 @@ function get_search_query_terms() {
 			$text_pos_amp = strpos($se,"&",$text_pos);
 			if (!$text_pos_amp) $text_pos_amp=strlen($se);
 			$se=substr($se,$text_pos,($text_pos_amp-$text_pos));			
-			if (strstr($se,"+")) $se = str_replace("+"," ",$se);
-			if (!detect_utf($se)) $se = win_utf8($se);
+			if (strstr($se,"+")) $se = str_replace("+"," ",$se);	
+			if (!detect_utf($se)) $se = win_utf8($se);		
 			$query_array = explode(" ", $se);
 		else:
 			$query_array=false;
@@ -196,7 +198,6 @@ function get_search_query_terms() {
 	endif;
 	return $query_array;
 }
-
 
 function html_words_highlight($s)
 {
@@ -330,7 +331,7 @@ function html_words_highlight($s)
 
                                    #парные и непарные таги:
                                    | <[\/\!]?[a-zA-Z][a-zA-Z\d]*' . $re_attrs_fast_safe . '\/?>
-
+								   
                                    #html сущности:
                                    | &(?> [a-zA-Z][a-zA-Z\d]+
                                         | \#(?> \d{1,4}
@@ -382,21 +383,24 @@ function wp_target_visitors_auto () {
 		$permalink = get_bloginfo('siteurl').$_SERVER['REQUEST_URI'];			
 		$text_code = str_replace("[PERMALINK]",$permalink,$text_code);
 		return $text_code;
-	}		
+	}
+		
 }
 
-function wp_target_visitors () {
-	$wp_target_code = wp_target_visitors_auto ();
-	echo $wp_target_code;
-}
+function wp_target_visitors() {
+	$text_code = wp_target_visitors_auto ();
+
+	echo $text_code;
+} 
+
     
 add_action('admin_menu', 'target_visitors_add_pages');
 add_action('init', 'target_visitors_set');
+
 add_filter('comment_text', 'html_words_highlight');
 add_filter('the_content', 'html_words_highlight');
 add_filter('the_excerpt', 'html_words_highlight');
 add_filter('the_title', 'html_words_highlight');
-add_action('wp_head', 'hilite_head');
 if (get_option('autoset')=="1"): 
 	add_filter('the_content', 'autosetfunc',1);
 endif;

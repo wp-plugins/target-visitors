@@ -1,63 +1,46 @@
-﻿=== Target Visitors ===
-Contributors: Abanova Olga
-Donate link: http://www.getincss.ru/
-Tags: seo, target visitors, search engines, google, yandex, msn, yahoo
-Requires at least: 2.3.2
-Tested up to: 2.8
-Stable tag: 1.2.1
+﻿/*
+Plugin Name: Target Visitors
+Plugin URI: http://www.getincss.ru/2008/07/13/wp-target-visitors/
+Description: Показывает ваше специальное сообщение для пользователей пришедших с поисковых систем Google, Yandex, Mail, Yahoo, Liveinternet, Rambler, Altavista, Msn.
+Author: Abanova Olga
+Version: 1.2.2_ru
+Author URI: http://www.getincss.ru
+*/
 
-Plugin shows a special message for users coming from search engines like Google, Yandex, MSN, Yahoo, etc.
+Поддерживаются поисковики Google, Yandex, Mail, Yahoo, Liveinternet, Rambler, Altavista, Msn. Пока доступна только русская версия плагина.
 
-== Description ==
+-----------------
+Активация плагина
+-----------------
 
-Plugin shows a special message(s) to your blog's visitors, who coming from search engines (Google, Yandex, MSN, Yahoo, Mail.ru, Altavista, Liveinternet, Rambler).
+Скачайте архив wp-target-visitors.rar и распакуйте содержимое (папку target-visitors). Скопируйте папку в директорию /plugins/ вашего блога. Зайдите в панель управления блогом и активируйте плагин. В списке "Настройки" вы увидите пукнт Target Visitors.
 
-It's really important to attract visitors attention. You can add any message to display it, for example:
+-----------------
+Настройки плагина
+-----------------
 
-"Like this article? Follow my blog! (rss link here)". 
+В поле "Ваш текст" вы увидите код сообщения по умолчанию. Измените его на свое усмотрение, используя дополнительные сокращения:
 
-So, you visitors will be more interested to follow your blog updates and you will see how your rss counter growing up.
+[PERMALINK] - URL текущей статьи, страницы, на которую зашел пользователь
 
-**For Russian users:**
+[SE_REQUEST] - тот самый поисковый запрос, по которому пришел пользователь.
 
-Плагин показывает специальное сообщение (которые вы введете) для пользователей пришедших с поисковых систем Google, Yandex, Mail, Yahoo, Liveinternet, Rambler, Altavista, Msn. Найденные слова подствечиваются (см. скриншоты)
+[RSS_URL] - адрес вашей RSS ленты
 
-[Скачать русскую версию][]
+Чтобы изменить CSS код для блока с сообщением, необходимо чтобы CSS-файл в папке с плагином имел права 777, т.е. доступ на запись.
 
-[Домашняя страница плагина][]
+Отметив чекбокс, плагин будет автоматически подключен к странице single.php
 
-[Скачать русскую версию]:http://downloads.wordpress.org/plugin/target-visitors.1.2.1_ru.zip
-[Домашняя страница плагина]:http://www.getincss.ru/2008/07/13/wp-target-visitors/
+-----------------
+Установка плагина
+-----------------
 
-== Installation ==
+После сохранения настроек вы можете установить следующий код на ваши страницы search.php, archive.php и т.д. (кроме single.php, если вы отметили чекбокс):
 
-1. Upload folder `target-visitors` to `/wp-content/plugins/` directory.
-2. Activate the plugin `Target Visitors`.
-3. Open Plugin options.  
-4. "Message" area is message that will be display to your target visitors. Here you can use tags:
+<? if(function_exists("wp_target_visitors")) wp_target_visitors(); ?>
 
-    **[PERMALINK]** - current page's URL
 
-    **[SE_REQUEST]** - search engine request that user coming from
+Чтобы увидеть плагин в действии, вам нужно зайти на ваш блог по какому-либо поисковому запросу с одного из перечисленных выше поисковиков.
 
-    **[RSS_URL]** - you RSS url 
-
-5. Check if the css file in `/wp-content/plugins/target-visitors/` directory writable. If yes, change styles as you need for display message.
-6. Tick the checkbox if you want to set up `wp_target_visitors` funcion automaticaly to your single.php page.
-7. If you want to show message on another pages (like search.php, archives.php) place this code: `<? if(function_exists('wp_target_visitors')) wp_target_visitors(); ?>` in your templates.
-
-== Frequently Asked Questions ==
-
-> if you have questions about plugin, please, describe you problem [here][]
-[here]: http://www.getincss.ru/wp-target-visitors_en/
-
-== Screenshots ==
-
-1. Here you can see how plugin options looks.
-2. And on this screen shot you can see what your visitors will see.
-
-== Features ==
-
-1. It's easy way to attract you target visitors to subscribe you feed.
-2. All found requests will be highlighting in title, content and comments text.
-3. It's absolutely free :)
+Если вам понравился плагин, то я буду рада любой вашей поддержке. Задавайте вопросы и предлагайте свои идеи в комментариях.
+http://www.getincss.ru/2008/07/13/wp-target-visitors/#comments
