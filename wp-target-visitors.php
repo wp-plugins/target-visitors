@@ -4,7 +4,7 @@ Plugin Name: Target Visitors
 Plugin URI: http://www.getincss.ru/wp-target-visitors_EN/
 Description: Plugin shows a special message for visitors coming from search engines: Google, Yandex, Mail, Yahoo, Liveinternet, Rambler, Altavista, Msn.
 Author: Abanova Olga
-Version: 1.1.1
+Version: 1.2.2
 Author URI: http://www.getincss.ru
 */
 
@@ -37,7 +37,7 @@ function autosetfunc($content) {
 //init on activate plugin
 if (!function_exists('target_visitors_set')) {
     function target_visitors_set() {
-        $text_code = "<div class=\"se_request\">You were come by request: <a href=\"[PERMALINK]\"><b>[SE_REQUEST]</b></a>.<br />Find interesting information? You can easy follow my blog through <a href=\"[RSS_URL]\"><b>RSS</b></a>.</div>";
+        $text_code = "<div class=\"se_request\">".__("You were come by request").": <a href=\"[PERMALINK]\"><b>[SE_REQUEST]</b></a>.<br />".__("Find interesting information? You can easy follow my blog through")." <a href=\"[RSS_URL]\"><b>RSS</b></a>.</div>";
 		$autoset = '0';
 		if(@$_POST['target_visitors_update']):
 				update_option("text_code", $_POST['text_code']);
@@ -54,7 +54,7 @@ if (!function_exists('target_visitors_set')) {
 
 //adding options in admin menu
 function target_visitors_add_pages() {
-   add_options_page('Target Visitors options', 'Target Visitors', 8, __FILE__, 'target_visitors_options_page');
+   add_options_page(__('Target Visitors options'), 'Target Visitors', 8, __FILE__, 'target_visitors_options_page');
 }
 
 //plugin options
@@ -64,7 +64,7 @@ function target_visitors_options_page() {
 			if (empty($_POST['text_code'])) {
 				  $text_code = "";
 				  update_option('text_code', $text_code);
-				  $msg_status = "HTML code removed";
+				  $msg_status = __("HTML code removed");
 			}
 			
 			if (empty($_POST['css_code'])){
@@ -72,14 +72,14 @@ function target_visitors_options_page() {
 				  if (is_writable($filename)) {
 						$css_open_file = fopen($filename, "w");					
 						if (fwrite($css_open_file, $css_code) === FALSE) {
-							$msg_status = "Error writing css file.";
+							$msg_status = __("Error writing css file.");
 							exit;
 						}					
 						fclose($css_open_file);						
 						//remove_action('wp_head','target_visitors_head');
-			      		$msg_status.="CSS code removed";
+			      		$msg_status.=__("CSS code removed");
 				   } else {
-					   $msg_status = "CSS file is not allowed for writing";
+					   $msg_status = __("CSS file is not allowed for writing");
 					   exit;
 				   }			      
 			?>
@@ -95,22 +95,22 @@ function target_visitors_options_page() {
 			  if (is_writable($filename)) {
 					$css_open_file = fopen($filename, "w");					
 					if (fwrite($css_open_file, $css_code) === FALSE) {
-						$msg_status.="Error writing css file.";
+						$msg_status.=__("Error writing css file.");
 						exit;
 					}					
 					fclose($css_open_file);						
-					$msg_status.="CSS code saved";
+					$msg_status.=__("CSS code saved");
 			   } else {
-			   $msg_status.="CSS file is not allowed for writing.";
+			   $msg_status.=__("CSS file is not allowed for writing.");
 			   }			 
 		} 
 		
 		if ($_POST['autoset']) {
 		  update_option('autoset', $_POST['autoset']);
-		  $msg_status.="Plugin will autoset to single.php";
+		  $msg_status.=__("Plugin will autoset to single.php");
 		  add_filter('the_content', 'autosetfunc');
 		} else {
-			$msg_status.="Plugin will not autoset to single.php";
+			$msg_status.=__("Plugin will not autoset to single.php");
 		}
 		
 		?><div id="message" class="updated fade"><p><?=$msg_status?></p></div><?
@@ -127,7 +127,7 @@ function target_visitors_options_page() {
 				$css_code = fread($css_open_file, filesize($filename));					
 				fclose($css_open_file);						
 		   } else {
-		   $msg_status.="Css file is not readable.";
+		   $msg_status.=__("Css file is not readable.");
 		   ?><div id="message" class="updated fade"><p><?=$msg_status?></p></div> <?
 		   }		
 	} 
@@ -135,22 +135,18 @@ function target_visitors_options_page() {
 <div class="wrap">
      <h2>Target visitors</h2>
 	  <div style="float:right; width:250px; border:solid 1px #ccc; padding:10px;">
-        <h3 style="font-size:16px; background:#eee">Support</h3>
-        <p>If you have any ideas or questions about this plugin, write a comment at plugin homepage <a href="http://www.getincss.ru/wp-target-visitors_en/">Target Visitors</a>.<br /><br />You can also e-mail me: webmaster(dog)getincss.ru<br /><br /><b>Do you like this plugin?</b><br />I'll glad for your donations. Webmoney:<br />Z102896061935<br />R144897054561</p>
+        <h3 style="font-size:16px; background:#eee"><? _e("Support");?></h3>
+        <p><? _e("If you have any ideas or questions about this plugin, write a comment at plugin homepage <a href=\"http://www.getincss.ru/wp-target-visitors_en/\">Target Visitors</a>.<br /><br />You can also e-mail me: webmaster(dog)getincss.ru<br /><br /><b>Do you like this plugin?</b><br />I'll glad for your donations. Webmoney:<br />Z102896061935<br />R144897054561"); ?></p>
         </div>
         <div style="margin-right:300px;">
-            <p>Plugin "Target Visitors" allow to show special message for visitors coming from search engines: Google, Yandex, Mail, Yahoo, Liveinternet, Rambler, Altavista, Msn. You can use this tags in text:<br />
-            <br><b>[PERMALINK]</b> - current page's URL<br><br>
-            <b style="color:red">[SE_REQUEST]</b> - search engine request that user coming by<br><br>
-            <b>[RSS_URL]</b> - URL for your RSS<br><br>
-            After saving data you can to put this code:<br><b><code>&lt;? if(function_exists("wp_target_visitors")) wp_target_visitors(); ?&gt;</code></b><br> on pages: search.php, archive.php, etc, where you want to show a message for target visitors.
+            <p><? _e("Plugin \"Target Visitors\" allow to show special message for visitors coming from search engines: Google, Yandex, Mail, Yahoo, Liveinternet, Rambler, Altavista, Msn. You can use this tags in text:<br /><br><b>[PERMALINK]</b> - current page's URL<br><br><b style=\"color:red\">[SE_REQUEST]</b> - search engine request that user coming by<br><br><b>[RSS_URL]</b> - URL for your RSS<br><br>After saving data you can to put this code:<br><b><code>&lt;? if(function_exists(\"wp_target_visitors\")) wp_target_visitors(); ?&gt;</code></b><br> on pages: search.php, archive.php, etc, where you want to show a message for target visitors."); ?>
             </p>                                
             <form name="form_target_visitors" method="post" action="<?=$_SERVER['REQUEST_URI']?>">
-                    <p>Your Message:<br /><textarea name="text_code" id="text_code" cols="40" rows="10" style="width: 80%; font-size: 14px;" class="code"><?=stripslashes($text_code);?></textarea></p>
-                    <p>CSS code (CSS file in <b>target-visitors</b> directory  must be writable):<br /><textarea name="css_code" id="css_code" cols="40" rows="10" style="width: 80%; font-size: 14px;" class="code"><?=stripslashes($css_code);?></textarea></p>
-                    <p><input type="checkbox" name="autoset" value="1" <? if (get_option('autoset')=="1") echo "checked";?> /> Autoset plugin's display message function on single.php page</p>
+                    <p><? _e("Your Message");?>:<br /><textarea name="text_code" id="text_code" cols="40" rows="10" style="width: 80%; font-size: 14px;" class="code"><?=stripslashes($text_code);?></textarea></p>
+                    <p><? _e("CSS code (CSS file in <b>target-visitors</b> directory  must be writable)"); ?>:<br /><textarea name="css_code" id="css_code" cols="40" rows="10" style="width: 80%; font-size: 14px;" class="code"><?=stripslashes($css_code);?></textarea></p>
+                    <p><input type="checkbox" name="autoset" value="1" <? if (get_option('autoset')=="1") echo "checked";?> /> <? _e("Autoset plugin's display message function on single.php page"); ?></p>
             <p class="submit">
-                <input type="submit" name="target_visitors_update" value="Save code &raquo;" />
+                <input type="submit" name="target_visitors_update" value="<? _e("Save code &raquo;"); ?>" />
             </p>			
      </div>
 </div>

@@ -4,7 +4,9 @@ Donate link: http://www.getincss.ru/
 Tags: seo, target visitors, search engines, google, yandex, msn, yahoo
 Requires at least: 2.3.2
 Tested up to: 2.8
-Stable tag: 1.2.1
+Version: 1.2.2
+Last Updated: 2009-06-21
+Stable tag: 1.2.2
 
 Plugin shows a special message for users coming from search engines like Google, Yandex, MSN, Yahoo, etc.
 
@@ -61,3 +63,14 @@ So, you visitors will be more interested to follow your blog updates and you wil
 1. It's easy way to attract you target visitors to subscribe you feed.
 2. All found requests will be highlighting in title, content and comments text.
 3. It's absolutely free :)
+
+== Changelog ==
+
+= 1.2.2_ru =
+* Fixed russian lang.
+
+= 1.2.1 =
+* Fixed for WP 2.8, fixed bugs with BOM.
+
+= 1.0 =
+* First version
