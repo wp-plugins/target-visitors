@@ -4,7 +4,7 @@ Plugin Name: Target Visitors
 Plugin URI: http://www.getincss.ru/wp-target-visitors_EN/
 Description: Plugin shows a special message for visitors coming from search engines: Google, Yandex, Mail, Yahoo, Liveinternet, Rambler, Altavista, Msn.
 Author: Abanova Olga
-Version: 1.2.3
+Version: 1.2.4
 Author URI: http://www.getincss.ru
 */
 
@@ -55,7 +55,7 @@ if (!function_exists('target_visitors_set')) {
 
 			$moFile = dirname(__FILE__) . "/lang/target-visitors_" . $currentLocale . ".mo";
 
-			if(@file_exists($moFile) && is_readable($moFile)) load_textdomain('sitemap', $moFile);
+			if(@file_exists($moFile) && is_readable($moFile)) load_textdomain('target-visitors', $moFile);
 
 		}	
 			
@@ -403,7 +403,6 @@ add_filter('comment_text', 'html_words_highlight');
 add_filter('the_content', 'html_words_highlight');
 add_filter('the_excerpt', 'html_words_highlight');
 add_filter('the_title', 'html_words_highlight');
-add_action('wp_head', 'hilite_head');
 if (get_option('autoset')=="1"): 
 	add_filter('the_content', 'autosetfunc',1);
 endif;
