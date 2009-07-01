@@ -1,16 +1,18 @@
 ﻿=== Target Visitors ===
 Contributors: Abanova Olga
 Donate link: http://www.getincss.ru/
-Tags: seo, target visitors, search engines, google, yandex, msn, yahoo
+Tags: seo, target visitors, search engines, google, yandex, msn, yahoo, highlight words, highlight search, highlight, welcome visitors
 Requires at least: 2.3.2
 Tested up to: 2.8
 Stable tag: 1.2.5
 
-Plugin shows a special message for users coming from search engines like Google, Yandex, MSN, Yahoo, etc.
+Plugin shows a special message to your blog's visitors, who coming from search engines (Google, Yandex, MSN, Yahoo, Mail.ru, Altavista, Liveinternet, Rambler) and highlight words (search engine request) in post, comments, title, tags and others.
 
 == Description ==
 
-Plugin shows a special message to your blog's visitors, who coming from search engines (Google, Yandex, MSN, Yahoo, Mail.ru, Altavista, Liveinternet, Rambler).
+Wanna attract more visitors and RSS readers? Plugin "Target Visitors" will help you to grow up your counters!
+
+Plugin shows a special message to your blog's visitors, who coming from search engines (Google, Yandex, MSN, Yahoo, Mail.ru, Altavista, Liveinternet, Rambler) and highlight words (search engine request) in post, comments, title, tags and others.
 
 It's really important to attract visitors attention. You can add any message to display it, for example:
 
