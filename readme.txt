@@ -1,5 +1,5 @@
 ﻿=== Target Visitors ===
-Contributors: Abanova Olga
+Contributors: Abanova Olga (www.getincss.ru)
 Donate link: http://www.getincss.ru/
 Tags: seo, target visitors, search engines, google, yandex, msn, yahoo, highlight words, highlight search, highlight, welcome visitors
 Requires at least: 2.3.2
