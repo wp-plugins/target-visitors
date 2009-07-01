@@ -16,7 +16,7 @@ Plugin shows a special message to your blog's visitors, who coming from search e
 
 It's really important to attract visitors attention. You can add any message to display it, for example:
 
-**"Like this article? Follow my blog! (rss link here)".** 
+> **Like this article? Follow my blog! (rss link here).** 
 
 So, your visitors will be more interested to follow your blog updates and you will see how your rss counter growing up :)
 
